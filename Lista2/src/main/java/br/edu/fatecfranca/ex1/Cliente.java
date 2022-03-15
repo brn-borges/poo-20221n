@@ -58,6 +58,8 @@ public final class Cliente {
     public final void setSaldo (float saldo){
         if (saldo >=0){
             this.saldo = saldo;
+        }  else {
+            System.out.println("Saldo Invalido");
         }
     }
 
@@ -90,7 +92,8 @@ public final class Cliente {
     public String mostra() {
         return "Cliente: \n Nome:" + nome + 
         "\n Nº Agencia: " + nroAgencia + 
-        "\n Nº Conta:" + nroConta + "\n Saldo:" + saldo;
+        "\n Nº Conta:" + nroConta + 
+        "\n Saldo:" + saldo;
     }
     
 }
