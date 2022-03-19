@@ -45,7 +45,13 @@ public class Conta {
     }
 
     public void setSaldo(float saldo) {
-        this.saldo = saldo;
+        if(saldo>=0){
+            this.saldo = saldo;
+        }else{
+            System.out.println("Saldo não pode ficar negativo!");
+        }
+        
+        
     }
     
     public void mostra(){

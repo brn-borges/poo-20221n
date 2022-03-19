@@ -7,15 +7,17 @@ public class Cartao {
     private  Date validade;
     private String bandeira;
     private Conta conta;
-
+    private int senha;
+    
     public Cartao() {
     }
 
-    public Cartao(int numero, int cvv, Date validade, String bandeira, Conta conta) {
+    public Cartao(int numero, int cvv, Date validade, String bandeira, int senha, Conta conta) {
         this.numero = numero;
         this.cvv = cvv;
         this.validade = validade;
         this.bandeira = bandeira;
+        this.senha = senha;
         this.conta = conta;
     }
     
@@ -56,6 +58,14 @@ public class Cartao {
     public Conta getConta() {
         return conta;
     }
+    
+    public int getSenha() {
+        return senha;
+    }
+
+    public void setSenha(int senha) {
+        this.senha = senha;
+    }
 
     public void setConta(Conta conta) {
         this.conta = conta;
@@ -67,9 +77,19 @@ public class Cartao {
         this.conta.mostra();
     }
     
-    public void sacar(float x, String senha){
+    public void sacar(float x, int senha){
         //efetive o saque, o saldo nao pode ficar negativo
         //adicionar a variavel senha no cartao
-        
+        if(senha == this.senha){
+            Date atual = new Date();
+            if(atual.before(this.validade)){
+                //alterar o valor do saldo
+                this.conta.setSaldo(this.conta.getSaldo() - x);
+            }else{
+                System.out.println("Cartão Vencido");
+            }         
+        }else{
+            System.out.println("Senha Invalida");
+        }
     }
 }
