@@ -51,7 +51,7 @@ public class ItemCarrinho {
     @Override //Avisa que o metodo
     //Herdado esta sendo anulado
     public String toString() {
-        return "ItemCarrinho{" + "codigo=" + codigo + ", descricao=" + descricao + ", valor=" + valor + ", qtde=" + qtde + '}';
+        return " \n ItemCarrinho{" + "codigo=" + codigo + ", descricao=" + descricao + ", valor=" + valor + ", qtde=" + qtde + '}';
     }
     
     
