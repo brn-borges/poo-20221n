@@ -19,9 +19,14 @@ public class Gerente extends Funcionario{
         this.comissao = comissao;
     }
 
+    @Override
+    public float calculaSalarioFinal(){
+        return this.salario + this.comissao/100;
+    }
     
     @Override
     public String toString() {
-        return "Gerente{" + "comissao=" + comissao + super.toString() +'}';
+        return "Gerente{" + "comissao=" + comissao + super.toString() +
+                " Salário Final: " + calculaSalarioFinal() +'}';
     }    
 }

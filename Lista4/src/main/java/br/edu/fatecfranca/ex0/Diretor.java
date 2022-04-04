@@ -28,10 +28,16 @@ public class Diretor extends Funcionario{
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+    
+    @Override
+    public float calculaSalarioFinal(){
+        return this.salario + this.carro;
+    }    
 
     @Override
     public String toString() {
-        return "Diretor{" + "carro=" + carro + ", modelo=" + modelo + super.toString() +'}';
+        return "Diretor{" + "carro=" + carro + ", modelo=" + modelo + 
+                super.toString() + " Salário Final: " + calculaSalarioFinal() +'}';
     }
     
     

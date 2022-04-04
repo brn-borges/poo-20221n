@@ -18,10 +18,16 @@ public class Assistente extends Funcionario {
     public void setBonus(float bonus) {
         this.bonus = bonus;
     }
+    
+    @Override
+    public float calculaSalarioFinal(){
+        return this.salario + this.bonus;
+    }
 
     @Override
     public String toString() {
-        return "Assistente{" + "bonus=" + bonus + super.toString() + '}';
+        return "Assistente{" + "bonus=" + bonus + super.toString() + 
+                " Salário Final: " + calculaSalarioFinal() +'}';
     }
     
 }
